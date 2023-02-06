@@ -1,0 +1,11 @@
+{
+  "name": "teste_pratico_qa_ploomes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^12.5.1",
+    "eslint-plugin-cypress": "^2.12.1"
+  }
+}

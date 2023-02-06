@@ -1,48 +1,52 @@
-# QA Developer Test
+<h2 align="center">Teste Pratico QA - Ploomes</h2><br><br> 
 
-Parabéns por chegar até esta fase do processo seletivo para Desenvolvedor QA.
+1. Crie uma nova pasta para o projeto.<br><br> 
 
-Aqui na Ploomes valorizamos muito uma qualidade: autonomia. Isso quer dizer que, uma vez que um problema é apresentado para um dos nossos colaboradores, cabe a este decidir qual a melhor solução.
+2. Abra a pasta no Visual Studio Code.<br><br> 
 
-Por isso,em nosso desafio, nos vamos setar alguns critérios mínimos para a aplicação e deixar você tomar as decisões mais profundas sobre a aplicação, como bibliotecas, estrutura da aplicação e etc.
+3. No terminal do Visual Studio Code, execute o seguinte comando:<br> 
+yarn init -y<br><br> 
 
-# Critérios mínimos:
+4. Em seguida, instale o Cypress executando o seguinte comando:<br> 
+yarn add cypress --dev<br><br> 
 
-- Aplicação em JavaScript
-- [Clean Code](https://becode.com.br/clean-code/)
-- Realizar teste na API do Ploomes nas seguintes entidades:
-  - CRUD em Clientes (/Contacts)
-  - CRUD em Negócios (/Deals)
-- Teste no Front-end simulando o uso do sistema semelhante ao realizado pelo usuário final. Devem ser testadas as seguintes funcionalidades:
-  - Login do sistema
-  - CRUD em Clientes
-  - CRUD em Negócios
+5. Para verificar se a instalação foi bem-sucedida, execute o seguinte comando:<br> 
+yarn cypress open<br><br> 
 
-# Diferenciais:
+6. Se o Cypress abrir corretamente, você pode começar a escrever testes.<br><br>
 
-- Testar mais funcionalidades além das especificadas;
+-----------<br><br>
 
-# Entrega
+<h3 align="center">Pontos sobre o que foi feito:</h3><br><br> 
 
-- Para a entrega, commitar na branch `main` os testes criados;
-- Incluir também instruções de execução, limitações, bugs conhecidos e quais seriam os próximos passos para a evolução do sistema;
+* Usar fixtures permite separar os dados dos testes das implementações, o que ajuda a tornar o código mais limpo e fácil de manter logo foi criado "credentials.json" para uso no Login.<br><br>
 
-# Documentação da API do Ploomes:
+* Foi realizado a criação de Page Object x Cypress Command para facilitar a criação de testes e a manutenção. Cenários onde na pagina apresenta o preenchimento de um formulário funciona muito bem desta maneira.<br><br>
 
-Para acessar a api do Ploomes você precisará da chave de integração, que você consegue pegar seguindo a documentação a seguir: https://developers.ploomes.com/
+* Sempre ter em mente utilizar o mínimo possível de cy.wait.<br><br>
 
-# Criação de um conta trial para realização dos testes:
+* Além dos cenários de cada parte do CRUD foi feito um com o fluxo completo do CRUD, tanto em API como em Web.<br><br>
 
-Você pode criar uma conta trial para realização do teste proposto através do link: https://www.ploomes.com/versao-trial
+* Nos testes em API foi extraída um .json de seus "response" após a realização de cada teste para a pasta fixture.<br><br>
 
-# Helpers
+* Foi feito o uso da biblioteca "faker.js" para o preenchimento dos dados tanto no Payload das API como nos Formulários dos Testes Web.<br><br>
 
-[O que é o módulo de clientes?](https://suporte.ploomes.com/pt-BR/articles/5452155-o-que-e-o-modulo-de-clientes)
+* Foi feito o uso da biblioteca ESLint Plugin para trazer a boa pratica do uso do Cypress para o código.<br><br>
 
-[Novo módulo de negócios](https://suporte.ploomes.com/pt-BR/articles/5452170-novo-modulo-de-negocios-08-08-19)
+-----------<br><br>
 
-[Como criar negócios](https://suporte.ploomes.com/pt-BR/articles/5452169-como-criar-negocios)
+<h3 align="center">Ponto de Vista:</h3><br><br> 
 
-[Curso de como utilizar o módulo de clientes](https://universidade.ploomes.com/courses/clientes)
+* A plataforma Ploomes e as API tem uma ótima interação com o cypress o que não trouxe dificuldade com seu uso.<br><br>
 
-[Curso de como utilizar o workflow](https://universidade.ploomes.com/courses/workflow)
+* Como boa pratica o ideal para referenciar um elemento o uso de "data-cy" do elemento por exemplo mas, foi usado o CSS do elemento que funciona perfeitamente sem nenhum tipo de complemento de entendimento no Cypress, poderia ser utilizado o Xpath também se desejado mas seria necessário a biblioteca cypress-xpath.<br><br>
+
+* Poderia ser feito a criação de um Report de teste para o uso em uma CI/CD como Jenkis ou Azure por exemplo.<br><br>
+
+* O uso do Cumcumber é uma opção também para melhorar a escrita dos testes que pode ser feito.<br><br>
+
+* O uso da biblioteca Cypress-Grep traria o beneficio de tag para cada cenário de teste assim conseguimos executar com facilidade cenários por tag em headless.<br><br>
+
+
+
+
