@@ -1,51 +1,72 @@
-<h2 align="center">Teste Pratico QA - Ploomes</h2><br><br> 
+# Teste - QA Ploomes 
 
-1. Crie uma nova pasta para o projeto.<br><br> 
+1. Crie uma nova pasta para o projeto.
 
-2. Abra a pasta no Visual Studio Code.<br><br> 
+2. Abra a pasta no Visual Studio Code.
 
-3. No terminal do Visual Studio Code, execute o seguinte comando:<br> 
-yarn init -y<br><br> 
+3. No terminal do Visual Studio Code, execute o seguinte comando (OBS: Se atentar a versão instalada se você ja tiver cache de outra versão anterior):
 
-4. Em seguida, instale o Cypress executando o seguinte comando:<br> 
-yarn add cypress --dev<br><br> 
+```bash
+npm install
+```
 
-5. Para verificar se a instalação foi bem-sucedida, execute o seguinte comando:<br> 
-yarn cypress open<br><br> 
+4. Para verificar se a instalação foi bem-sucedida, execute o seguinte comando: 
 
-6. Se o Cypress abrir corretamente, você pode começar a escrever testes.<br><br>
+```bash
+npx cypress open
+```
 
------------<br><br>
+5. Se o Cypress abrir corretamente, você pode começar a escrever testes.
 
-<h3 align="center">Pontos sobre o que foi feito:</h3><br><br> 
+## Pontos sobre o que foi feito:
 
-* Usar fixtures permite separar os dados dos testes das implementações, o que ajuda a tornar o código mais limpo e fácil de manter logo foi criado "credentials.json" para uso no Login.<br><br>
+* Os criterios foram atendidos: <br>
+   1) (OK) JavaScript (Cypress)<br>
+   2) (OK) Clean Code<br>
+   3) (OK) Realizar teste na API do Ploomes:<br>
+        CRUD em Clientes (/Contacts)<br>
+        CRUD em Negócios (/Deals)<br>
+   4) (OK) Teste no Front-end:<br>
+        Login do sistema<br>
+        CRUD em Clientes<br>
+        CRUD em Negócios
 
-* Foi realizado a criação de Page Object x Cypress Command para facilitar a criação de testes e a manutenção. Cenários onde na pagina apresenta o preenchimento de um formulário funciona muito bem desta maneira.<br><br>
+* Usar fixtures permite separar os dados dos testes das implementações, o que ajuda a tornar o código mais limpo e fácil de manter logo foi criado "credentials.json" para uso no Login.
 
-* Sempre ter em mente utilizar o mínimo possível de cy.wait.<br><br>
+* Foi realizado a criação de Page Object x Cypress Command para facilitar a criação de testes e a manutenção. Cenários onde na pagina apresenta o preenchimento de um formulário funciona muito bem desta maneira e fluxos que são necessarios condicionais para torna-lo mais seguro do resultado. Está pratica de utilizar Cypress Command ou App Action traz esse diferencias que o Cypress tem.
 
-* Além dos cenários de cada parte do CRUD foi feito um com o fluxo completo do CRUD, tanto em API como em Web.<br><br>
+* Sempre ter em mente utilizar o mínimo possível de cy.wait.
 
-* Nos testes em API foi extraída um .json de seus "response" após a realização de cada teste para a pasta fixture.<br><br>
+* Além dos cenários de cada parte do CRUD foi feito um com o fluxo completo do CRUD, tanto em API como em Web.
 
-* Foi feito o uso da biblioteca "faker.js" para o preenchimento dos dados tanto no Payload das API como nos Formulários dos Testes Web.<br><br>
+* Nos testes em API foi extraída um .json de seus "response" após a realização de cada teste para a pasta fixture.
 
-* Foi feito o uso da biblioteca ESLint Plugin para trazer a boa pratica do uso do Cypress para o código.<br><br>
+* Foi feito o uso da biblioteca "faker.js" para o preenchimento dos dados tanto no Payload das API como nos Formulários dos Testes Web.
 
------------<br><br>
+* Foi feito o uso da biblioteca ESLint Plugin para trazer a boa pratica do uso do Cypress para o código.
 
-<h3 align="center">Ponto de Vista:</h3><br><br> 
+## Considerações: 
 
-* A plataforma Ploomes e as API tem uma ótima interação com o cypress o que não trouxe dificuldade com seu uso.<br><br>
+* Os inputs sem obrigatoriedade, o que eu digo com isso que muitos campos podem ser vazios e tornar o teste valido, o que talvez possa trazer um falso positivo.
 
-* Como boa pratica o ideal para referenciar um elemento o uso de "data-cy" do elemento por exemplo mas, foi usado o CSS do elemento que funciona perfeitamente sem nenhum tipo de complemento de entendimento no Cypress, poderia ser utilizado o Xpath também se desejado mas seria necessário a biblioteca cypress-xpath.<br><br>
+* Não foi encontrado bugs de alta criticidades.
 
-* Poderia ser feito a criação de um Report de teste para o uso em uma CI/CD como Jenkis ou Azure por exemplo.<br><br>
+## Ponto de Vista:
 
-* O uso do Cumcumber é uma opção também para melhorar a escrita dos testes que pode ser feito.<br><br>
+* A plataforma Ploomes e as API tem uma ótima interação com o cypress o que não trouxe dificuldade com seu uso
 
-* O uso da biblioteca Cypress-Grep traria o beneficio de tag para cada cenário de teste assim conseguimos executar com facilidade cenários por tag em headless.<br><br>
+* Como boa pratica o ideal para referenciar um elemento o uso de "data-cy" do elemento por exemplo mas, foi usado o CSS do elemento que funciona perfeitamente sem nenhum tipo de complemento de entendimento no Cypress, poderia ser utilizado o Xpath também se desejado mas seria necessário a biblioteca cypress-xpath.
+
+* Poderia ser feito a criação de um Report de teste para o uso em uma CI/CD como Jenkis ou Azure por exemplo.
+
+* O uso do Cumcumber é uma opção também para melhorar a escrita dos testes que pode ser feito.
+
+* O uso da biblioteca Cypress-Grep traria o beneficio de tag para cada cenário de teste assim conseguimos executar com facilidade cenários por tag em headless.
+O que tornaria os testes bem classificados para ser utilizados na CI/CD e traria maior facilidade na execução via headless.
+
+* O uso de uma ferramenta como K6 para teste de desenvolvimento atrelado ao Cypress funcionaria muito bem para a plataforma.
+
+### Muito obrigado pela oportunidade, gostei muito de fazer este teste.
 
 
 
